@@ -2,7 +2,7 @@
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   background-color: #25252A;
 }
 
@@ -18,7 +18,7 @@
 
 .login {
   width: 300px;
-  height: 100px;
+  padding: 2rem;
   border: none;
   color: white;
   background-color: rgb(255, 0, 68);
@@ -30,7 +30,7 @@
 }
 
 .login:hover {
-  box-shadow: inset 300px 0 0 0 #f9e506;
+  box-shadow: inset 400px 0 0 0 #f9e506;
   cursor: pointer;
   color: #000;
 }
@@ -42,3 +42,7 @@
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  text-align: center;
+}
