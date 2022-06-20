@@ -27,8 +27,16 @@
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
-  letter-spacing: 3px;
-  background-color: #ffffff;
+  letter-spacing: 2px;
+
+}
+
+body {
+  margin-top: 150px;
+  background-color: #e3d888;
+/* background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%); */
+
+
 }
 
 .welcome-page-container {
@@ -40,11 +48,6 @@
   min-height: 100vh;
 }
 
-.container {
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .login {
   width: 300px;
@@ -63,9 +66,9 @@
   width: auto;
   padding: 1rem;
   border: none;
-  color: white;
-  background-color: rgba(76,175,80,255);
-  border-radius: 4px;
+  color: #100b00;
+  background-color:#e2f1af;
+  border-radius: 15px;
   box-shadow: inset 0 0 0 0 #f9e506;
   font-size: 2rem;
 } 
@@ -94,26 +97,9 @@ a {
   text-align: center;
 }
 
-.accountInfo {
-  display: grid;
-}
 
-.item {
-  padding: 10px;
-  border: 1px solid black;
-}
 
-.main {
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  grid-column-gap: 10px;
-}
 
-.sidePanel {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-row-gap: 10px;
-}
 
 .create-event__container {
   display: flex;
@@ -177,20 +163,21 @@ a {
 	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	box-shadow: inset 0px 1px 0px 0px #3985B1;
-	background-color: rgba(76,175,80,255);;
+	background-color: #e2f1af;;
 	border: 1px solid #17445E;
 	display: inline-block;
 	cursor: pointer;
-	color: #FFFFFF;
+	color: #100b00;
 	padding: 8px 18px;
 	text-decoration: none;
   font-size: 1rem;
+  border-radius: 15px;
 	font-family: 'Source Sans Pro', sans-serif;
 }
 .create-event-form ul li input[type="button"]:hover, 
 .create-event-form ul li input[type="submit"]:hover {
-	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
-	background-color: #28739E;
+	/* background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%); */
+	background-color: #57c648;
 }
 
 
