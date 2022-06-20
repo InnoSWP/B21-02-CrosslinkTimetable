@@ -80,3 +80,19 @@ class EventAPIView(APIView):
         a.bulk_create(folder=a.calendar, items=calendar_items)
 
         return Response({'post': model_to_dict(post_new)})
+
+
+def test_base_page(request):
+    return render(request, "base.html")
+
+def events(request):
+    return render(request, "WideEvents/events.html")
+
+def create_event(request):
+    return render(request, "WideEvents/create-event.html")
+
+def profile(request):
+    return render(request, "WideEvents/profile.html")
+
+def signin(request):
+    return render(request, "WideEvents/signin.html")

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Create event{% endblock %}
+
+{% block content %}
+
+<div class="create-event__form-wrapper">
+    <form id="create-event-form" class="create-event-form">
+        <ul>
+
+        <li>
+            <input type="text" name="name" class="field-style field-split align-left" placeholder="Name" />
+            <input type="text" name="group_of_recipients" class="field-style field-split align-right" placeholder="group" />
+        </li>
+
+        <li>
+            <input type="text" name="time_from" class="field-style field-split align-left" placeholder="time from" />
+            <input type="text" name="time_to" class="field-style field-split align-right" placeholder="time to" />
+        </li>
+
+        <li>
+        <input type="text" name="remind_before" class="field-style field-full align-none" placeholder="remind before" />
+        </li>
+
+        <li>
+        <textarea name="description" class="field-style" placeholder="description"></textarea>
+        </li>
+
+        <li>
+        <input type="submit" value="Submit" />
+        </li>
+
+        </ul>
+    </form>
+</div>
+
+{% endblock %}
