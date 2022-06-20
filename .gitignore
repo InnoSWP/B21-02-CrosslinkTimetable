@@ -1,1 +1,5 @@
-REST_API/venv/
+venv/
+__pycache__/
+
+# Static files collected by Django
+REST_API/static/
