@@ -35,6 +35,8 @@ class EventAPIView(APIView):
         return Response({'posts': university_events})
     
     def post(self, request):
+        print(request.data)
+
         post_new = Event.objects.create(
             name=request.data['name'],
             content=request.data['content'],

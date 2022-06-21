@@ -9,8 +9,8 @@
         <ul>
 
         <li>
-            <input type="text" name="name" class="field-style field-split align-left" placeholder="Name" />
-            <input type="text" name="group_of_recipients" class="field-style field-split align-right" placeholder="group" />
+            <input type="text" name="name" class="field-style field-full align-none" placeholder="Name" />
+            <!-- <input type="text" name="group_of_recipients" class="field-style field-split align-right" placeholder="group" /> -->
         </li>
 
         <li>
@@ -23,7 +23,15 @@
         </li>
 
         <li>
-        <textarea name="description" class="field-style" placeholder="description"></textarea>
+        <input name="place" class="field-style field-full" placeholder="place"></input>
+        </li>
+
+        <li>
+        <textarea name="content" class="field-style" placeholder="description"></textarea>
+        </li>
+
+        <li>
+        <textarea name="group_of_recipients" class="field-style" placeholder="who will come (write university email)"></textarea>
         </li>
 
         <li>
@@ -33,5 +41,31 @@
         </ul>
     </form>
 </div>
+
+<script>
+    const form = document.getElementById("create-event-form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        fetch("http://localhost:8000/WideEvents", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            return response.json()
+        }).then((data) => {
+            console.log("success:", data)
+        }).catch((error) => {
+            console.log("failed:", error)
+        })
+
+        console.log(data);
+    })
+</script>
 
 {% endblock %}
