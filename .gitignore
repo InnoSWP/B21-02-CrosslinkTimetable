@@ -1,6 +1,6 @@
 venv/
 __pycache__/
-REST_API/CrosslinkTimetable/credentials.py
+REST_API/CrosslinkTimetable/WideEvents/credentials.py
 
 # Static files collected by Django
 REST_API/static/
