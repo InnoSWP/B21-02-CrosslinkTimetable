@@ -3,11 +3,9 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from WideEvents.models import Event
-from exchangelib import Credentials
-from exchangelib import Mailbox
-from exchangelib import DELEGATE, Account
+from exchangelib import Credentials, DELEGATE, Account
 import datetime
-from exchangelib import Account, CalendarItem, Attendee, Mailbox
+from exchangelib import Account, CalendarItem
 from exchangelib.items import SEND_TO_ALL_AND_SAVE_COPY
 
 from .credentials import login, password
@@ -56,7 +54,13 @@ class EventAPIView(APIView):
         begin_year, begin_month, begin_day, begin_hour, begin_minute, begin_second = parse_date(time_from)
         end_year, end_month, end_day, end_hour, end_minute, end_second = parse_date(time_to)
 
-        attendees = request.data['group_of_recipients'].split(',')
+        attendees = request.data['group_of_recipients']
+        
+        if attendees == 'Students':
+            attendees = ['i.orekhov@innopolis.university', 'd.alekhin@innopolis.university', 'i.ezhova@innopolis.university']
+        else:
+            attendees = ['a.khan@innopolis.ru', 'e.kruglova@innopolis.ru', 'm.almdfaa@innopolis.university']
+
 
         print(attendees)
 
