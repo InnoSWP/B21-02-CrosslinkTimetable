@@ -46,6 +46,7 @@ class EventAPIView(APIView):
             primary_smtp_address=login, credentials=creds,
             autodiscover=True, access_type=DELEGATE
         )
+        
         tz = zoneinfo.ZoneInfo('Europe/Moscow')
         subject = request.data['name']
         body = request.data['content']
