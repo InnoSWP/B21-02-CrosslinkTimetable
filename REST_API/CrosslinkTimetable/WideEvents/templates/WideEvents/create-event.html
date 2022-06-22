@@ -10,32 +10,42 @@
 
         <li>
             <input type="text" name="name" class="field-style field-full align-none" placeholder="Name" />
-            <!-- <input type="text" name="group_of_recipients" class="field-style field-split align-right" placeholder="group" /> -->
         </li>
 
         <li>
-            <input type="datetime-local" id = "time-from" name="time-from" class="field-style field-split align-left" placeholder="time from" />
-            <input type="datetime-local" id = "time-to" name="time-to" class="field-style field-split align-right" placeholder="time to" />
+            <input type="datetime-local" id= "time-from" name="time-from" class="field-style field-split align-left" placeholder="time from" />
+            <input type="datetime-local" id= "time-to" name="time-to" class="field-style field-split align-right" placeholder="time to" />
         </li>
 
         <li>
-        <input type="text" name="remind_before" class="field-style field-full align-none" placeholder="remind before" />
+            <form action="#">
+                <select name="remind before" id="choose-time" class="field-style">
+                  <option value="0">remind before: </option>
+                  <option value="1">1 hour</option>
+                  <option value="2">2 hours</option>
+                  <option value="3">3 hours</option>
+                  <option value="6">6 hours</option>
+                  <option value="12">12 hours</option>
+                  <option value="24">1 day</option>
+                  <option value="168">1 week</option>
+                </select>
+            </form>
         </li>
 
         <li>
-        <input name="place" class="field-style field-full" placeholder="place"></input>
+            <input name="place" class="field-style field-full" placeholder="place"></input>
         </li>
 
         <li>
-        <textarea name="content" class="field-style" placeholder="description"></textarea>
+            <textarea name="content" class="field-style" placeholder="description"></textarea>
         </li>
 
         <li>
-        <textarea name="group_of_recipients" class="field-style" placeholder="who will come (write university email)"></textarea>
+            <textarea name="group_of_recipients" class="field-style" placeholder="who will come (write university email)"></textarea>
         </li>
 
         <li>
-        <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" />
         </li>
 
         </ul>

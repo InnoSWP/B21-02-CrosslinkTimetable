@@ -129,7 +129,9 @@ display: block;
 margin-bottom: 10px;
 min-height: 45px;
 }
+
 .create-event-form ul li  .field-style{
+background: white;
 box-sizing: border-box; 
 -webkit-box-sizing: border-box;
 -moz-box-sizing: border-box; 
