@@ -4,6 +4,60 @@
 
 {% block content %}
 
-<h2>Awesome!</h2>
+<div class="events">
+    <div id="event1">
+        <div id="name1"></div>
+    </div>
+
+    <div id="event2">
+        <div id="name2"></div>
+    </div>
+
+    <div id="event3">
+        <div id="name3"></div>
+    </div>
+
+</div>
+
+
+<style>
+    #event1 {
+        height: 20px;
+        width: 50px;
+        border: black 2 px solid;
+    }
+</style>
+
+<script>
+    function drawEvent(event) {
+        var id = event.id;
+        var name = event.name;
+        var time_from = event.time_from;
+        var time_to = event.time_to;
+        var remind_before = event.remind_before;
+        var content = event.content;
+
+        document.getElementById("event1").textContent = id;
+    }
+
+    async function populate() {
+        const requestURL = 'http://localhost:8000/WideEvents';
+        const request = new Request(requestURL);
+
+        const response = await fetch(request);
+        const response_json = await response.json()
+        
+        const events = JSON.parse(JSON.stringify(response_json)).posts;
+
+        for (let i = 0; i < 5; ++i) {
+            drawEvent(events[i]);
+        }
+    }
+
+    populate();
+    
+
+
+</script>
 
 {% endblock %}
