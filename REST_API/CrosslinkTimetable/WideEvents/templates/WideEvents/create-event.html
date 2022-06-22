@@ -14,8 +14,8 @@
         </li>
 
         <li>
-            <input type="text" name="time_from" class="field-style field-split align-left" placeholder="time from" />
-            <input type="text" name="time_to" class="field-style field-split align-right" placeholder="time to" />
+            <input type="datetime-local" id = "time-from" name="time-from" class="field-style field-split align-left" placeholder="time from" />
+            <input type="datetime-local" id = "time-to" name="time-to" class="field-style field-split align-right" placeholder="time to" />
         </li>
 
         <li>
@@ -43,13 +43,14 @@
 </div>
 
 <script>
+
     const form = document.getElementById("create-event-form");
     form.addEventListener("submit", function(event) {
         event.preventDefault();
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        fetch("http://localhost:8000/WideEvents", {
+            fetch("http://localhost:8000/WideEvents", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
