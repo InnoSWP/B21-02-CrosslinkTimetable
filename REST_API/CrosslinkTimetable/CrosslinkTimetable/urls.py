@@ -24,6 +24,6 @@ urlpatterns = [
     path('WideEvents/create-event', create_event, name="create-event"),
     path('WideEvents/profile', profile, name="profile"),
     path('WideEvents/events', events, name="events"),
-    
     path('WideEvents/signin', signin, name="signin"),
+    path('', signin, name="signin"),
 ]
