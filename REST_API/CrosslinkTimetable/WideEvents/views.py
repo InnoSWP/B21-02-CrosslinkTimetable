@@ -90,7 +90,6 @@ class EventAPIView(APIView):
         return Response({'post': model_to_dict(post_new)})
 
 
-
 @require_http_methods(["GET"])
 def test_base_page(request):
     return render(request, "base.html")
