@@ -1,6 +1,8 @@
 from django.test import SimpleTestCase
-from django.urls import reverse, resolve
-from WideEvents.views import create_event, EventAPIView, profile
+from django.urls import resolve, reverse
+
+from WideEvents.views import EventAPIView, create_event, profile
+
 
 class TestUrls(SimpleTestCase):
     def test_createevent_url_is_resolved(self):
