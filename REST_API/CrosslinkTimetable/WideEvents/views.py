@@ -7,6 +7,7 @@ from exchangelib import Credentials, DELEGATE, Account
 import datetime
 from exchangelib import Account, CalendarItem
 from exchangelib.items import SEND_TO_ALL_AND_SAVE_COPY
+from django.views.decorators.http import require_http_methods
 
 from .credentials import login, password
 
@@ -89,17 +90,23 @@ class EventAPIView(APIView):
         return Response({'post': model_to_dict(post_new)})
 
 
+
+@require_http_methods(["GET"])
 def test_base_page(request):
     return render(request, "base.html")
 
+@require_http_methods(["GET"])
 def events(request):
     return render(request, "WideEvents/events.html")
 
+@require_http_methods(["GET"])
 def create_event(request):
     return render(request, "WideEvents/create-event.html")
 
+@require_http_methods(["GET"])
 def profile(request):
     return render(request, "WideEvents/profile.html")
 
+@require_http_methods(["GET"])
 def signin(request):
     return render(request, "WideEvents/signin.html")
