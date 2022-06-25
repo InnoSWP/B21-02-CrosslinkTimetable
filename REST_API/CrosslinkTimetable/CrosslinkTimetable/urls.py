@@ -18,8 +18,8 @@ from django.urls import path
 from WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, signin
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('WideEvents', EventAPIView.as_view()),
+    path('admin/', admin.site.urls, name="admin"),
+    path('WideEvents', EventAPIView.as_view(), name="welcome"),
     path('WideEvents/base', test_base_page, name="base"),
     path('WideEvents/create-event', create_event, name="create-event"),
     path('WideEvents/profile', profile, name="profile"),
