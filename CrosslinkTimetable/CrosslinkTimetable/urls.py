@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, signin
+from DoE_emails.views import DoEEmailsAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls, name="admin"),
-    path('WideEvents', EventAPIView.as_view(), name="welcome"),
+    path('WideEvents', EventAPIView.as_view(), name="WideEvents"),
+    path('DoE', DoEEmailsAPIView.as_view(), name="DoE"),
     path('WideEvents/base', test_base_page, name="base"),
     path('WideEvents/create-event', create_event, name="create-event"),
     path('WideEvents/profile', profile, name="profile"),
