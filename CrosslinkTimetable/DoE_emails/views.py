@@ -22,7 +22,12 @@ class DoEEmailsAPIView(APIView):
             receiver = list(map(lambda x: x[0], cursor.execute("SELECT * FROM Teachers").fetchall()))
             group_of_recipients = list(map(lambda x: Mailbox(email_address=x), receiver))
 
-        print(group_of_recipients)
+        if group_of_recipients_cc == 'Students' and request.data['group_of_recipients'] != request.data['group_of_recipients_cc']:
+            receiver_cc = list(map(lambda x: x[0], cursor.execute("SELECT * FROM Students").fetchall()))
+            group_of_recipients_cc = list(map(lambda x: Mailbox(email_address=x), receiver_cc))
+        elif group_of_recipients_cc == 'Teachers' and request.data['group_of_recipients'] != request.data['group_of_recipients_cc']:
+            receiver_cc = list(map(lambda x: x[0], cursor.execute("SELECT * FROM Teachers").fetchall()))
+            group_of_recipients_cc = list(map(lambda x: Mailbox(email_address=x), receiver_cc))
 
         conn.close()
 
@@ -40,7 +45,7 @@ class DoEEmailsAPIView(APIView):
             subject=subject,
             body=content,
             to_recipients=group_of_recipients,
-            # cc_recipients=['carl@example.com', 'denice@example.com'],
+            cc_recipients=group_of_recipients_cc,
         )
         m.send()
 
