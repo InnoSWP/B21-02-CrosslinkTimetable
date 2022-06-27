@@ -2,14 +2,14 @@ from django.forms import model_to_dict
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from WideEvents.models import Event
-from exchangelib import Credentials, DELEGATE, Account
+from .models import Event
+from exchangelib import Credentials, DELEGATE
 import datetime
 from exchangelib import Account, CalendarItem
 from exchangelib.items import SEND_TO_ALL_AND_SAVE_COPY
 from django.views.decorators.http import require_http_methods
 
-from .credentials import login, password
+from credentials import login, password
 
 try:
     import zoneinfo

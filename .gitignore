@@ -1,6 +1,6 @@
 venv/
 __pycache__/
-CrosslinkTimetable/WideEvents/credentials.py
+CrosslinkTimetable/credentials.py
 
 # Static files collected by Django
 # CrosslinkTimetable/static/
