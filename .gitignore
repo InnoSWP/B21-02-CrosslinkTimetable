@@ -3,4 +3,4 @@ __pycache__/
 CrosslinkTimetable/WideEvents/credentials.py
 
 # Static files collected by Django
-CrosslinkTimetable/static/
+# CrosslinkTimetable/static/
