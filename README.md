@@ -9,5 +9,9 @@ A IU student gets notifications from different sources: Moodle calendar, DoE not
 
 [![GitHub Super-Linter](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 
-## Demo
+## Demo Video
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Zo33ILWeCcY/0.jpg)](https://www.youtube.com/watch?v=Zo33ILWeCcY)
+
+## How to use
+
+You should open the site and log in into you Innopolis University account
