@@ -109,3 +109,7 @@ def profile(request):
 @require_http_methods(["GET"])
 def signin(request):
     return render(request, "WideEvents/signin.html")
+
+@require_http_methods(["GET"])
+def sendEmail(request):
+    return render(request, "WideEvents/sendEmail.html")
