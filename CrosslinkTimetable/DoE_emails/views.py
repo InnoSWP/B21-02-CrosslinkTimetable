@@ -40,13 +40,21 @@ class DoEEmailsAPIView(APIView):
             autodiscover=True, access_type=DELEGATE
         )
 
-        m = Message(
-            account=my_account,
-            subject=subject,
-            body=content,
-            to_recipients=group_of_recipients,
-            cc_recipients=group_of_recipients_cc,
-        )
+        if group_of_recipients_cc != '0':
+            m = Message(
+                account=my_account,
+                subject=subject,
+                body=content,
+                to_recipients=group_of_recipients,
+                cc_recipients=group_of_recipients_cc,
+            )
+        else:
+            m = Message(
+                account=my_account,
+                subject=subject,
+                body=content,
+                to_recipients=group_of_recipients,
+            )
         m.send()
 
         return Response({"resp": 200})

@@ -79,10 +79,10 @@ class EventAPIView(APIView):
         post_new = Event.objects.create(
             name=request.data['name'],
             content=request.data['content'],
-            remind_before=request.data['remind_before'],
+            remind_before="01:00:00",
             place=request.data['place'],
-            time_from=request.data['time_from'],
-            time_to=request.data['time_to'],
+            time_from=request.data['time-from'] + ":00Z",
+            time_to=request.data['time-to'] + ":00Z",
             group_of_recipients=request.data['group_of_recipients']
         )
 
