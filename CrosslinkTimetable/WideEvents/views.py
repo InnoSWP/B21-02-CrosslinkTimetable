@@ -37,6 +37,8 @@ class EventAPIView(APIView):
         return Response({'posts': university_events})
     
     def post(self, request):
+        print(request.data)
+
         if len(list(Event.objects.filter(name=request.data['name']))) == 1:
             return Response({"message": "This event is already planned"}, 406)
         elif len(list(Event.objects.filter(name=request.data['name']))) > 1:
@@ -51,8 +53,8 @@ class EventAPIView(APIView):
         tz = zoneinfo.ZoneInfo('Europe/Moscow')
         subject = request.data['name']
         body = request.data['content']
-        time_from = request.data['time_from']
-        time_to = request.data['time_to']
+        time_from = request.data['time-from'] + ':00Z'
+        time_to = request.data['time-to'] + ':00Z'
         begin_year, begin_month, begin_day, begin_hour, begin_minute, begin_second = parse_date(time_from)
         end_year, end_month, end_day, end_hour, end_minute, end_second = parse_date(time_to)
 
@@ -62,9 +64,6 @@ class EventAPIView(APIView):
             attendees = ['i.orekhov@innopolis.university', 'd.alekhin@innopolis.university', 'i.ezhova@innopolis.university']
         else:
             attendees = ['a.khan@innopolis.ru', 'e.kruglova@innopolis.ru', 'm.almdfaa@innopolis.university']
-
-
-        print(attendees)
 
         item = CalendarItem(
             start=datetime.datetime(begin_year, begin_month, begin_day, begin_hour, begin_minute, tzinfo=tz),

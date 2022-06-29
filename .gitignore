@@ -1,6 +1,7 @@
 venv/
 __pycache__/
 credentials*
+../testing_garage/
 
 # Static files collected by Django
 # CrosslinkTimetable/static/

@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path
 from WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, signin, sendEmail
 from DoE_emails.views import DoEEmailsAPIView
+from SyncTables.views import SyncingAPIView
 
 urlpatterns = [
     path('admin/', admin.site.urls, name="admin"),
     path('WideEvents', EventAPIView.as_view(), name="WideEvents"),
     path('DoE', DoEEmailsAPIView.as_view(), name="DoE"),
+    path('Sync', SyncingAPIView.as_view(), name="Sync"),
     path('DoE/sendEmail', sendEmail, name="sendEmail"),
     path('WideEvents/base', test_base_page, name="base"),
     path('WideEvents/create-event', create_event, name="create-event"),
