@@ -1,1 +1,1 @@
-web: gunicorn CrosslinkTimetable/CrosslinkTimetable/wsgi
+web: gunicorn CrosslinkTimetable/wsgi
