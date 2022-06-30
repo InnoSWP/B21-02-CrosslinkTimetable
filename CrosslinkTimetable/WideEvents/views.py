@@ -1,5 +1,5 @@
 from django.forms import model_to_dict
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Event
@@ -8,6 +8,12 @@ import datetime
 from exchangelib import Account, CalendarItem
 from exchangelib.items import SEND_TO_ALL_AND_SAVE_COPY
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.forms import UserCreationForm
+
+from .forms import CreateUserForm
+from django.contrib import messages
+
+from django.contrib.auth import authenticate, login, logout
 
 from credentials import login, password
 
@@ -107,9 +113,36 @@ def profile(request):
     return render(request, "WideEvents/profile.html")
 
 @require_http_methods(["GET"])
+def sendEmail(request):
+    return render(request, "WideEvents/sendEmail.html")
+
+@require_http_methods(["GET"])
 def signin(request):
     return render(request, "WideEvents/signin.html")
 
-@require_http_methods(["GET"])
-def sendEmail(request):
-    return render(request, "WideEvents/sendEmail.html")
+def registerPage(request):
+    form = CreateUserForm()
+
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            user = form.cleaned_data.get()
+            messages.success(request, 'Account was created for ' + user)
+            return redirect('login')
+
+    context = {'form': form}
+    return render(request, "WideEvents/register.html", context)
+
+def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('WideEvents/profile')
+            
+    context = {}
+    return render(request, "WideEvents/login.html", context)
