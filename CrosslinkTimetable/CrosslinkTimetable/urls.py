@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, signin, loginPage, sendEmail
+from WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, calendar, loginPage, sendEmail
 from WideEvents.views import registerPage
 from DoE_emails.views import DoEEmailsAPIView
 
@@ -16,4 +16,5 @@ urlpatterns = [
     # path('WideEvents/signin', signin, name="signin"),
     path('login/', loginPage, name="login"),
     path('register/', registerPage, name="register"),
+    path('WideEvents/calendar', calendar, name="calendar")
 ]

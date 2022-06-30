@@ -120,6 +120,9 @@ def sendEmail(request):
 def signin(request):
     return render(request, "WideEvents/signin.html")
 
+def calendar(request):
+    return render(request, "WideEvents/calendar.html")
+
 def registerPage(request):
     form = CreateUserForm()
 
