@@ -2,7 +2,7 @@
 
 <h1 align="center"> 📅 Sync Timetables </h1>
 
-<p align="center"> <img src="https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/LoGo%20of%20SWD%20(3).png" width="500"> </p>
+<p align="center"> <img src="https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/LoGo%20of%20SWD%20(3).png" width="450"> </p>
 
 <p align="center"> Crosslink timetables and schedules from Moodle and University </p>
 
