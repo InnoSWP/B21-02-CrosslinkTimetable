@@ -2,11 +2,11 @@
   <content><![CDATA[
 # ${1:Sync Timetables}
 
-![Image](https://drive.google.com/file/d/1DgYzjJiSPKyxxXMlxhdVuoX3WU6hhFeg/view?usp=sharing)
+![image](https://drive.google.com/file/d/1DgYzjJiSPKyxxXMlxhdVuoX3WU6hhFeg/view?usp=sharing)
 
 ## About The Project
 
-![Image](https://drive.google.com/file/d/1oU4yt3kFnKu60axuhz6SN_LV9mRvXFHw/view?usp=sharing)
+![image](https://drive.google.com/file/d/1oU4yt3kFnKu60axuhz6SN_LV9mRvXFHw/view?usp=sharing)
 
 Sync Timetables is a special website that is developed to serve various types of users in Innopolis University ranging from students and teachers to event organizers to Department of Education members. This website connects two big independent systems, Moodle and Microsoft Exchcange. It will enable organizers and DoE members to create and edit events with automatic notification of users. Basicly, it will help users synchronize several calendars by unifying them as well as notify users about upcoming events.
 
@@ -20,7 +20,7 @@ Sync Timetables is a special website that is developed to serve various types of
 
 ## Usage
 
-![Image](https://drive.google.com/file/d/1-23mFBnuRj_7mY7YVEVBVfvYo9ZVNgQG/view?usp=sharing)
+![image](https://drive.google.com/file/d/1-23mFBnuRj_7mY7YVEVBVfvYo9ZVNgQG/view?usp=sharing)
 
 You can find the main webpage of the project [here](https://synctimetables.herokuapp.com/). There you can get started by entering your username and password. Once you login, the process gets straightforward and self-explanatory.
 
