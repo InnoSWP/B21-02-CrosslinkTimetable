@@ -14,7 +14,7 @@ Sync Timetables is a special website that is developed to serve various types of
 
 ## Demo
 
-[![IMAGE ALT TEXT HERE](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(132).png)](https://www.youtube.com/watch?v=_wZNFJtUfvc&t=4s)
+[![IMAGE ALT TEXT HERE]<p align="center"> <img src="https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(131).png" width="900"> </p>](https://www.youtube.com/watch?v=_wZNFJtUfvc&t=4s)
 
 ## Usage
 
