@@ -2,7 +2,7 @@
   <content><![CDATA[
 # ${1:Sync Timetables}
 
-![image](LoGo of SWD (2).png)
+![image](https://drive.google.com/file/d/1DgYzjJiSPKyxxXMlxhdVuoX3WU6hhFeg/view?usp=sharing)
 
 ## About The Project
 
