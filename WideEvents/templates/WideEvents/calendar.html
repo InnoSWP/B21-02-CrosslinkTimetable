@@ -8,7 +8,7 @@
         async function getEvents() {
             const container = document.getElementById("events");
 
-            const requestURL = 'http://localhost:8000/WideEvents';
+            const requestURL = '/WideEvents';
             const request = new Request(requestURL);
 
             const response = await fetch(request);

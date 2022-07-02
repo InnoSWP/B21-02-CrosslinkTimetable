@@ -49,7 +49,7 @@
         const data = Object.fromEntries(formData);
         console.log(formData);
 
-            fetch("http://localhost:8000/DoE", {
+            fetch("/DoE", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
