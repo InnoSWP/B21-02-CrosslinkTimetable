@@ -14,9 +14,9 @@ Sync Timetables is a special website that is developed to serve various types of
 
 ## Features
 
-* 
-* 
-* 
+* Easy sending e-mails
+* Easy creating events
+* All events from Moodle and Outlook in one calendar (in process)
 
 ## Demo
 
