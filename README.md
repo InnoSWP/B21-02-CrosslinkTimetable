@@ -18,7 +18,7 @@ Sync Timetables is a special website that is developed to serve various types of
 
 ## Usage
 
-![image](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(131).png)
+<p align="center"> <img src="(https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(131).png" width="900"> </p>
 
 You can find the main webpage of the project [here](https://synctimetables.herokuapp.com/). There you can get started by entering your username and password. Once you login, the process gets straightforward and self-explanatory.
 
