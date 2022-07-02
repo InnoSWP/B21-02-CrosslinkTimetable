@@ -81,6 +81,8 @@ class EventAPIView(APIView):
             body=body,
             required_attendees=attendees
         )
+        print(item)
+        return Response({'post': 200})
         item.save(send_meeting_invitations=SEND_TO_ALL_AND_SAVE_COPY)
 
         post_new = Event.objects.create(
@@ -136,6 +138,7 @@ def registerPage(request):
 
     context = {'form': form}
     return render(request, "WideEvents/register.html", context)
+
 
 def loginPage(request):
     if request.method == 'POST':
