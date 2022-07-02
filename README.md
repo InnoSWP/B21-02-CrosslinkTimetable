@@ -20,7 +20,7 @@ Sync Timetables is a special website that is developed to serve various types of
 
 ## Usage
 
-![image](https://drive.google.com/file/d/1-23mFBnuRj_7mY7YVEVBVfvYo9ZVNgQG/view?usp=sharing)
+![image]([https://drive.google.com/file/d/1-23mFBnuRj_7mY7YVEVBVfvYo9ZVNgQG/view?usp=sharing](https://user-images.githubusercontent.com/37439026/176478937-b4e02d56-323e-48a5-9ec3-38840718e7c6.png))
 
 You can find the main webpage of the project [here](https://synctimetables.herokuapp.com/). There you can get started by entering your username and password. Once you login, the process gets straightforward and self-explanatory.
 
