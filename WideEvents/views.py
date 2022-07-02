@@ -1,5 +1,5 @@
 from django.forms import model_to_dict
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Event
@@ -8,6 +8,12 @@ import datetime
 from exchangelib import Account, CalendarItem
 from exchangelib.items import SEND_TO_ALL_AND_SAVE_COPY
 from django.views.decorators.http import require_http_methods
+from django.contrib.auth.forms import UserCreationForm
+
+from .forms import CreateUserForm
+from django.contrib import messages
+
+from django.contrib.auth import authenticate, login, logout
 
 from credentials import login, password
 
@@ -35,7 +41,7 @@ class EventAPIView(APIView):
     def get(self, request):
         university_events = list(Event.objects.all().values())
         return Response({'posts': university_events})
-    
+
     def post(self, request):
         print(request.data)
 
@@ -49,7 +55,7 @@ class EventAPIView(APIView):
             primary_smtp_address=login, credentials=creds,
             autodiscover=True, access_type=DELEGATE
         )
-        
+
         tz = zoneinfo.ZoneInfo('Europe/Moscow')
         subject = request.data['name']
         body = request.data['content']
@@ -59,9 +65,10 @@ class EventAPIView(APIView):
         end_year, end_month, end_day, end_hour, end_minute, end_second = parse_date(time_to)
 
         attendees = request.data['group_of_recipients']
-        
+
         if attendees == 'Students':
-            attendees = ['i.orekhov@innopolis.university', 'd.alekhin@innopolis.university', 'i.ezhova@innopolis.university']
+            attendees = ['i.orekhov@innopolis.university', 'd.alekhin@innopolis.university',
+                         'i.ezhova@innopolis.university']
         else:
             attendees = ['a.khan@innopolis.ru', 'e.kruglova@innopolis.ru', 'm.almdfaa@innopolis.university']
 
@@ -74,6 +81,8 @@ class EventAPIView(APIView):
             body=body,
             required_attendees=attendees
         )
+        print(item)
+        return Response({'post': 200})
         item.save(send_meeting_invitations=SEND_TO_ALL_AND_SAVE_COPY)
 
         post_new = Event.objects.create(
@@ -106,9 +115,40 @@ def profile(request):
     return render(request, "WideEvents/profile.html")
 
 @require_http_methods(["GET"])
+def sendEmail(request):
+    return render(request, "WideEvents/sendEmail.html")
+
+@require_http_methods(["GET"])
 def signin(request):
     return render(request, "WideEvents/signin.html")
 
-@require_http_methods(["GET"])
-def sendEmail(request):
-    return render(request, "WideEvents/sendEmail.html")
+def calendar(request):
+    return render(request, "WideEvents/calendar.html")
+
+def registerPage(request):
+    form = CreateUserForm()
+
+    if request.method == 'POST':
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            user = form.cleaned_data.get()
+            messages.success(request, 'Account was created for ' + user)
+            return redirect('login')
+
+    context = {'form': form}
+    return render(request, "WideEvents/register.html", context)
+
+
+def loginPage(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('WideEvents/profile')
+            
+    context = {}
+    return render(request, "WideEvents/login.html", context)
