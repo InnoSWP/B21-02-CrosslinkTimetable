@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path
-from WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, calendar, loginPage, sendEmail
-from WideEvents.views import registerPage
-from DoE_emails.views import DoEEmailsAPIView
-from Auth.views import AuthAPIView
+from CrosslinkTimetable.WideEvents.views import EventAPIView, test_base_page, create_event, profile, events, calendar, loginPage, sendEmail
+from CrosslinkTimetable.WideEvents.views import registerPage
+from CrosslinkTimetable.DoE_emails.views import DoEEmailsAPIView
+from CrosslinkTimetable.Auth.views import AuthAPIView
 
 urlpatterns = [
     path('', loginPage, name="login"),
