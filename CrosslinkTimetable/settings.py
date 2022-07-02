@@ -80,13 +80,23 @@ WSGI_APPLICATION = "CrosslinkTimetable.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbqku3ursa4rot',
+        'USER': 'nsrgpaihgpzjih',
+        'PASSWORD': '9699ac577e27274b27523e56ea3e9ad14658b6a5f0b6d0f447894b6b1a9331ce',
+        'HOST': 'ec2-54-165-90-230.compute-1.amazonaws.com',
+        'PORT': 5432
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
