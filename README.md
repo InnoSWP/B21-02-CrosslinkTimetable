@@ -1,16 +1,54 @@
-[![GitHub Super-Linter](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+<snippet>
+  <content><![CDATA[
+# ${1:Sync Timetables}
 
-<h1 align="center"> 📅 Crosslink Timetable </h1>
+![image](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/LoGo%20of%20SWD%20(2).png)
 
-<p align="center"> <img src="assets/calendar.png" width="200"> </p>
+## About The Project
 
-<p align="center"> Crosslink timetables and schedules from Moodle and University </p>
+![image](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(129).png)
 
-## Motivation
-A IU student gets notifications from different sources: Moodle calendar, DoE notifications, wide events. Our goal is to make a unified calendar to make life easier for students and employees. 
+Sync Timetables is a special website that is developed to serve various types of users in Innopolis University ranging from students and teachers to event organizers to Department of Education members. This website connects two big independent systems, Moodle and Microsoft Exchcange. It will enable organizers and DoE members to create and edit events with automatic notification of users. Basicly, it will help users synchronize several calendars by unifying them as well as notify users about upcoming events.
 
-## Architecture
-![image](https://user-images.githubusercontent.com/37439026/176478937-b4e02d56-323e-48a5-9ec3-38840718e7c6.png)
+## Features
 
-## Demo Video
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Zo33ILWeCcY/0.jpg)](https://www.youtube.com/watch?v=Zo33ILWeCcY)
+
+
+## Demo
+
+[![IMAGE ALT TEXT HERE](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(132).png)](https://www.youtube.com/watch?v=_wZNFJtUfvc&t=4s)
+
+## Usage
+
+![image](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(131).png)
+
+You can find the main webpage of the project [here](https://synctimetables.herokuapp.com/). There you can get started by entering your username and password. Once you login, the process gets straightforward and self-explanatory.
+
+## Contributing
+
+Contributions to this repository are welcome
+
+* Fork the project
+* Create your feature branch: `git checkout -b my-new-feature`
+* Commit your changes: `git commit -am 'Add some feature'`
+* Push to the branch: `git push origin my-new-feature`
+* Submit a pull request
+
+## Credits 
+
+* [Django](https://www.djangoproject.com/)
+* [Heroku](https://www.heroku.com/)
+
+## Badges
+
+
+
+## License
+
+MIT License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+]]></content>
+  <tabTrigger>readme</tabTrigger>
+</snippet>
