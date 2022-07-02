@@ -47,4 +47,4 @@ Contributions to this repository are welcome
 
 MIT License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See [License](./LICENSE.md) for more information.
