@@ -1,6 +1,4 @@
-<snippet>
-  <content><![CDATA[
-# ${1:Sync Timetables}
+<h1 align="center"> 📅 Sync Timetables </h1>
 
 ![image](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/LoGo%20of%20SWD%20(2).png)
 
@@ -48,7 +46,3 @@ Contributions to this repository are welcome
 MIT License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
