@@ -18,7 +18,8 @@ Sync Timetables is a special website that is developed to serve various types of
 
 ## Demo
 
-[![IMAGE ALT TEXT HERE](https://github.com/InnoSWP/B21-02-CrosslinkTimetable/blob/main/assets/Screenshot%20(132).png)](https://www.youtube.com/watch?v=_wZNFJtUfvc&t=4s)
+[![IMAGE ALT TEXT HERE](![image](https://user-images.githubusercontent.com/106450413/177008315-8acf2216-8ce5-4aea-a2b9-31c33b2a752f.png)
+)](https://www.youtube.com/watch?v=_wZNFJtUfvc&t=4s)
 
 ## Usage
 
@@ -40,10 +41,6 @@ Contributions to this repository are welcome
 
 * [Django](https://www.djangoproject.com/)
 * [Heroku](https://www.heroku.com/)
-
-## Badges
-
-
 
 ## License
 
