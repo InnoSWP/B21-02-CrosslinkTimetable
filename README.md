@@ -48,7 +48,3 @@ Contributions to this repository are welcome
 MIT License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-]]></content>
-  <tabTrigger>readme</tabTrigger>
-</snippet>
