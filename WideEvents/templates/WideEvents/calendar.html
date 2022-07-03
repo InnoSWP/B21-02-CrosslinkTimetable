@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8' />
+  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.css' rel='stylesheet' />
+  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.0/main.min.js'></script>
+  <script>
+    async function getEvents() {
+      const container = document.getElementById("events");
+
+      const requestURL = '/WideEvents';
+      const request = new Request(requestURL);
+
+      const response = await fetch(request);
+      const response_json = await response.json()
+
+      const events = JSON.parse(JSON.stringify(response_json)).posts;
+
+      return events;
+    }
+
+    function convertEvent(event) {
+      return {
+        title: event.name,
+        start: (new Date(event.time_from).toISOString()),
+        allDay: false
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var calendarEl = document.getElementById('calendar');
+
+      getEvents().then((events) => {
+
+        const transformed = events.map(convertEvent);
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          events: transformed
+        });
+        calendar.render();
+
+      });
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <a href="{% url 'profile' %}" class="button">Return</a>
+  <div id='calendar'></div>
+
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    .button {
+      width: auto;
+      padding: 10px;
+      border: none;
+      color: #100b00;
+      background-color: #57c648;
+      border-radius: 15px;
+      box-shadow: inset 0 0 0 0 #f9e506;
+      font-size: 2rem;
+    }
+
+    .button:hover {
+      box-shadow: inset 400px 0 0 0 #f9e506;
+      cursor: pointer;
+    }
+  </style>
+</body>
+
+</html>

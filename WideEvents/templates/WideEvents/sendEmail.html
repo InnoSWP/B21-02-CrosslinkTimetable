@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Send e-mail{% endblock %}
+
+{% block content %}
+
+<div class="create-event__form-wrapper">
+    <form id="sendEmail-form" class="create-event-form">
+        <ul>
+
+        <li>
+            <input type="text" name="subject" class="field-style field-full align-none" placeholder="subject" />
+        </li>
+
+        <li>
+            <textarea name="content" class="field-style" placeholder="content"></textarea>
+        </li>
+
+        <li>
+            <select name="group_of_recipients" class="field-style">
+                <option value="0">To </option>
+                <option value="Students">Students</option>
+                <option value="Teachers">Teachers</option>
+            </select>
+        </li>
+
+        <li>
+            <select name="group_of_recipients_cc" class="field-style">
+                <option value="0">Cc </option>
+                <option value="Students">Students</option>
+                <option value="Teachers">Teachers</option>
+            </select>
+        </li>
+
+        <li>
+            <input type="submit" value="Submit" />
+        </li>
+
+        </ul>
+    </form>
+</div>
+
+<script>
+
+    const form = document.getElementById("sendEmail-form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        console.log(formData);
+
+            fetch("/DoE", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            return response.json()
+        }).then((data) => {
+            console.log("success:", data)
+        }).catch((error) => {
+            console.log("failed:", error)
+        })
+
+        console.log(data);
+    })
+</script>
+
+{% endblock %}

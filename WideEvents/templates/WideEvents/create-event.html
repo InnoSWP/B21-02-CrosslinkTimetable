@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Create event{% endblock %}
+
+{% block content %}
+
+<div class="create-event__form-wrapper">
+    <form id="create-event-form" class="create-event-form">
+        <ul>
+
+        <li>
+            <input type="text" name="name" class="field-style field-full align-none" placeholder="Name" />
+        </li>
+
+        <li>
+            <input type="datetime-local" id= "time-from" name="time-from" class="field-style field-split align-left" placeholder="time from" />
+            <input type="datetime-local" id= "time-to" name="time-to" class="field-style field-split align-right" placeholder="time to" />
+        </li>
+
+        <li>
+            <form action="#">
+                <select name="remind_before" id="choose-time" class="field-style">
+                  <option value="0">remind before: </option>
+                  <option value="1">1 hour</option>
+                  <option value="2">2 hours</option>
+                  <option value="3">3 hours</option>
+                  <option value="6">6 hours</option>
+                  <option value="12">12 hours</option>
+                  <option value="24">1 day</option>
+                  <option value="168">1 week</option>
+                </select>
+            </form>
+        </li>
+
+        <li>
+            <input name="place" class="field-style field-full" placeholder="place"></input>
+        </li>
+
+        <li>
+            <textarea name="content" class="field-style" placeholder="description"></textarea>
+        </li>
+
+        <li>            
+            <select name="group_of_recipients" id="choose-time" class="field-style">
+                <option value="0">group of recipients: </option>
+                <option value="Students">Students</option>
+                <option value="Teachers">Teachers</option>
+            </select>
+        </li>
+
+        <li>
+            <input type="submit" value="Submit" />
+        </li>
+
+        </ul>
+    </form>
+</div>
+
+<script>
+
+    const form = document.getElementById("create-event-form");
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+            fetch("/WideEvents", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        }).then((response) => {
+            return response.json()
+        }).then((data) => {
+            console.log("success:", data)
+        }).catch((error) => {
+            console.log("failed:", error)
+        })
+
+        console.log(data);
+    })
+</script>
+
+{% endblock %}
