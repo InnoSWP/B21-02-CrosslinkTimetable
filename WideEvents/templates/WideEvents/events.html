@@ -62,6 +62,8 @@
 
         const response = await fetch(request);
         const response_json = await response.json()
+
+        console.log(response_json)
         
         const events = JSON.parse(JSON.stringify(response_json)).posts;
 
