@@ -3,6 +3,3 @@ __pycache__/
 credentials*
 ../testing_garage/
 .idea
-
-# Static files collected by Django
-# CrosslinkTimetable/static/
