@@ -124,6 +124,9 @@ def signin(request):
 def calendar(request):
     return render(request, "WideEvents/calendar.html")
 
+def moodle(request):
+    return render(request, "WideEvents/moodle.html")
+
 def registerPage(request):
     form = CreateUserForm()
 

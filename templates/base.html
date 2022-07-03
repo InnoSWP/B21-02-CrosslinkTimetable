@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <title>{% block title %}Crosslink Timetable{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'base.css' %}">
 </head>
+
 <body>
     <div class="container main-container">
         <nav class="nav-panel">
@@ -16,6 +18,7 @@
             <a href="{% url 'calendar' %}" class="button">Calendar</a>
             <a href="{% url 'create-event' %}" class="button">Create event</a>
             <a href="{% url 'sendEmail' %}" class="button">Send e-mail</a>
+            <a href="{% url 'moodle' %}" class="button">Moodle</a>
         </nav>
 
         <main class="content">
@@ -24,4 +27,5 @@
     </div>
     <script src="{% static 'index.js' %}"></script>
 </body>
+
 </html>
