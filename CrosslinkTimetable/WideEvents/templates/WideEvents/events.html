@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+
+<div id="events">
+    <div class="event">
+
+        <!-- <div class="name">
+            <h2>Spring Ball</h2>
+        </div>
+
+        <div class="description">
+            <h3>This is a great ball!</h3>
+        </div>
+
+        <div class="time">
+            <p>10.12 — 12.12</p>
+        </div> -->
+
+        <!-- <hr style="margin-bottom: 4px;"> -->
+    </div>
+
+
+</div>
+
+<style>
+    .p {
+        font-size: 8px;
+    }
+</style>
+
+<script>
+    function drawEvent(container, event) {
+        var id = event.id;
+        var name = event.name;
+        var time_from = new Date(event.time_from);
+        var time_to = new Date(event.time_to);
+        var remind_before = event.remind_before;
+        var content = event.content;
+
+        let div = document.createElement('div');
+        div.className = "event";
+        div.innerHTML = "<h2>" + name + "</h2>" +
+                        "<h3>" + content + "</h3>" +
+                        "<p>" + time_from.toLocaleString()  + " — " +
+                           time_to.toLocaleString() + "</p>" +
+                        '<hr style="margin-bottom: 4px;">';
+        container.appendChild(div);
+
+        // const eventNode = document.createElement("event1");
+        // eventNode.innerHTML = name;
+        // container.appendChild(eventNode)
+    }
+
+    async function populate() {
+        const container = document.getElementById("events");
+
+        const requestURL = 'http://localhost:8000/WideEvents';
+        const request = new Request(requestURL);
+
+        const response = await fetch(request);
+        const response_json = await response.json()
+        
+        const events = JSON.parse(JSON.stringify(response_json)).posts;
+
+        // for (const event of events) {
+        //     drawEvent(container, events[i]);
+        // }
+        for(let i = 0; i < 5; ++i) {
+            drawEvent(container, events[i]);
+        }
+    }
+
+    populate();
+    
+
+
+</script>
+
+{% endblock %}
