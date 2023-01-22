@@ -1,1 +1,5 @@
-REST_API/venv/
+venv/
+__pycache__/
+#credentials*
+../testing_garage/
+.idea
